@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class AnimeService implements AnimeRepository {
+public class AnimeService {
+    private List<Anime> animes = List.of(new Anime(1L, "dbz"), new Anime(2L, "cdz"));
+
     public List<Anime> listAll() {
-        return List.of(new Anime(1L, "dbz"), new Anime(2L, "cdz"));
+        return animes;
     }
 
     public List<Anime> findById() {
