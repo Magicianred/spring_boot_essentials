@@ -11,4 +11,10 @@ public class AnimeService implements AnimeRepository {
     public List<Anime> listAll() {
         return List.of(new Anime(1L, "dbz"), new Anime(2L, "cdz"));
     }
+
+    public List<Anime> findById() {
+        return List.of(new Anime(1L, "dbz"), new Anime(2L, "cdz"));
+    }
 }
+
+
