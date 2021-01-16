@@ -49,5 +49,6 @@ public class AnimeController {
     public ResponseEntity<Void> replace(@RequestBody Anime anime) {
         animeService.replace(anime);
 
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
