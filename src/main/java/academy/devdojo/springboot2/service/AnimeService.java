@@ -18,10 +18,12 @@ public class AnimeService {
         animes = new ArrayList<>(List.of(new Anime(1L, "dbz"), new Anime(2L, "cdz")));
     }
 
+    // GET METHOD - LIST ALL
     public List<Anime> listAll() {
         return animes;
     }
 
+    // GET METHOD BY ID
     public Anime findById(long id) {
         return animes.stream()
                 .filter(anime -> anime.getId().equals(id))
@@ -29,6 +31,7 @@ public class AnimeService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Anime not found"));
     }
 
+    // POST METHOD
     public Anime save(Anime anime) {
         anime.setId(ThreadLocalRandom.current().nextLong(3, 100000));
         animes.add(anime);
@@ -36,6 +39,7 @@ public class AnimeService {
         return anime;
     }
 
+    // DELETE METHOD
     public void delete(long id) {
         animes.remove(findById(id));
     }
